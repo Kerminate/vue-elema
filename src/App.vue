@@ -13,9 +13,7 @@
       </div>
     </div>
     <router-view></router-view>
-    <div class="content">
-      I am content.
-    </div>
+    <div class="content"></div>
   </div>
 </template>
 
