@@ -222,7 +222,7 @@
       -webkit-backdrop-filter: blur(10px)
       &.fade-enter-active, &.fade-leave-active
         transition: all 0.5s ease
-      &.fade-enter, &.fade-leave-active
+      &.fade-enter, &.fade-leave-to
         opacity: 0
       .detail-wrapper
         width: 100%
