@@ -49,6 +49,7 @@
   import shopcart from '@/components/shopcart/shopcart'
   import cartcontrol from '@/components/cartcontrol/cartcontrol'
   import food from '@/components/food/food'
+  import axios from 'axios'
 
   const ERR_OK = 0
 
@@ -91,9 +92,21 @@
     },
     created () {
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-      this.$http.get('/api/goods').then((response) => {
-        let result = response.body
-        // console.log(result)
+      // this.$http.get('/api/goods').then((response) => {
+      //   let result = response.body
+      //   // console.log(result)
+      //   if (result.error === ERR_OK) {
+      //     this.goods = result.data
+      //     // console.log(this.goods)
+      //     this.$nextTick(() => {
+      //       this._initScroll()
+      //       this._calculateHeight()
+      //     })
+      //   }
+      // })
+      axios.get('/api/goods').then((response) => {
+        let result = response.data
+        console.log(result)
         if (result.error === ERR_OK) {
           this.goods = result.data
           // console.log(this.goods)
